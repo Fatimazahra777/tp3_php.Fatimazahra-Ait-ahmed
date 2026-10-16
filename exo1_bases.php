@@ -76,9 +76,8 @@ echo "<strong>Prix TTC : " . $prix_ttc . " DH</strong><br>";
 ?>
 
 <?php
-/*
-  Exercice 1.4 : Types et conversions
-*/
+
+//Exercice 1.4 : Types et conversions
 
 echo "<h3>Exercice 1.4 : Types et conversions</h3>";
 
@@ -133,4 +132,49 @@ echo "Décimal : " . $dec . "<br>";
 echo "Hexadécimal : " . $hex . "<br>";
 echo "Octal : " . $oct . "<br>";
 echo "Binaire : " . $bin . "<br>";
+?>
+
+<?php
+
+// Exercice 1.5 : Chaînes de caractères
+
+// Déclaration des variables requises
+$traitees = "égales à";
+$ici = 2;
+
+echo "<h3>Exercice 1.5 : Chaînes de caractères</h3>";
+
+// 1. Ahmed a dit : "J'ai réussi"
+echo "1. Ahmed a dit : \"J'ai réussi\"<br>";
+
+// 2. Voulez-vous supprimer C:\.?
+echo "2. Voulez-vous supprimer C:\\.?<br>";
+
+// 3. Ceci n'affichera pas \n de nouvelle ligne
+echo '3. Ceci n\'affichera pas \n de nouvelle ligne<br>';
+
+// 4. Les variables ne seront pas $traitees $ici (non interprétées)
+echo '4. Les variables ne seront pas $traitees $ici<br>';
+
+// 5. Les variables seront égales à 2 (interprétées)
+echo "5. Les variables seront $traitees $ici<br><br>";
+
+
+// Suite : Partie manipulation des chaînes
+
+// A. Suppression des astérisques avec trim()
+$chaine = "*Bonjour les développeurs*";
+$chaine_nettoyee = trim($chaine, "*");
+
+echo "<b>A. Utilisation de trim() :</b><br>";
+echo "Avant : " . $chaine . "<br>";
+echo "Après : " . $chaine_nettoyee . "<br><br>";
+
+// B. Affichage lettre par lettre avec strlen() et une boucle for
+echo "<b>B. Affichage lettre par lettre :</b><br>";
+$texte = "PHP"; 
+for ($i = 0; $i < strlen($texte); $i++) {
+    echo $texte[$i] . "<br>";
+}
+
 ?>
