@@ -22,6 +22,8 @@ $Prix_HT = 100;
 $a = "petit a";
 $A = "GRAND A";
 
+
+echo "<h3>Exercice 1.1 : Noms de variables</h3>";
 echo "\$a = " . $a . "<br>";
 echo "\$A = " . $A . "<br><br>";
 ?>
@@ -30,7 +32,9 @@ echo "\$A = " . $A . "<br><br>";
 //Exercice 1.2 :Constantes
 require 'config.php';
 
-echo "Établissement : " . ETABLISSEMENT . "<br>";
+
+echo "<h3>Exercice 1.2 : Constantes</h3>";
+echo "Établissement : <strong> " . ETABLISSEMENT . "</strong><br>";
 echo "Note Minimale : " . NOTE_MIN . "<br>";
 echo "Note Maximale : " . NOTE_MAX . "<br>";
 echo "Seuil : " . SEUIL . "<br><br>";
@@ -55,6 +59,20 @@ echo "<br><br>";
      - const est exécuté au moment de la compilation (Compile-time). Elle ne peut pas être utilisée à l'intérieur des structures conditionnelles (comme if).
      - define() est exécuté au moment de l'exécution (Run-time). Elle peut être utilisée n'importe où dans le code (par exemple à l'intérieur d'un if).
 */
+?>
+
+<?php
+//Exercice 1.3 : Calcul (Prix TTC)
+
+$prix_ht = 60;
+$tva = 20; // 20%
+
+$prix_ttc = $prix_ht * (1 + $tva / 100);
+
+echo "<h3>Exercice 1.3 : Calcul du Prix TTC</h3>";
+echo "Prix HT : " . $prix_ht . " DH<br>";
+echo "Taux de TVA : " . $tva . " %<br>";
+echo "<strong>Prix TTC : " . $prix_ttc . " DH</strong><br>";
 ?>
 
 
