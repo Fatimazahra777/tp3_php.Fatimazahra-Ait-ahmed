@@ -75,4 +75,62 @@ echo "Taux de TVA : " . $tva . " %<br>";
 echo "<strong>Prix TTC : " . $prix_ttc . " DH</strong><br>";
 ?>
 
+<?php
+/*
+  Exercice 1.4 : Types et conversions
+*/
 
+echo "<h3>Exercice 1.4 : Types et conversions</h3>";
+
+// Question 1 : Cast en string
+$test = 42;
+$test = (string) $test; 
+
+echo "<b>1. Cast en string :</b><br>";
+var_dump($test); 
+echo "<br><br>";
+
+
+// Question 2 : Cast en booléen (bool)
+echo "<b>2. Cast en booléen :</b><br>";
+
+var_dump((bool) "0");    // bool(false) 
+echo "<br>";
+var_dump((bool) 0.0);    // bool(false)
+echo "<br>";
+var_dump((bool) "0");    // bool(false)
+echo "<br>";
+var_dump((bool) "");     // bool(false) 
+echo "<br>";
+var_dump((bool) "abc");  // bool(true)  
+echo "<br>";
+var_dump((bool) []);     // bool(false) 
+echo "<br>";
+var_dump((bool) null);   // bool(false)
+echo "<br><br>";
+
+// Question 3 : Cast divers (int, float)
+echo "<b>3. Cast divers :</b><br>";
+var_dump((int) 3.9);       // int(3) 
+echo "<br>";
+var_dump((int) "12abc");   // int(12)
+echo "<br>";
+var_dump((float) "1.5e3"); // float(1500) 
+echo "<br>";
+var_dump((int) true);      // int(1) 
+echo "<br><br>";
+
+
+// Question 4 : Notations numériques (Décimal, Hexadécimal, Octal, Binaire)
+echo "<b>4. Notations numériques (Nombre 255) :</b><br>";
+
+$dec = 255;          // décimal
+$hex = 0xFF;         // hexadécimal 
+$oct = 0377;         // octal 
+$bin = 0b11111111;   // binaire
+
+echo "Décimal : " . $dec . "<br>";
+echo "Hexadécimal : " . $hex . "<br>";
+echo "Octal : " . $oct . "<br>";
+echo "Binaire : " . $bin . "<br>";
+?>
