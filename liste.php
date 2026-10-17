@@ -79,6 +79,64 @@ if (file_exists($chemin_fichier)) {
         echo "<h3 style='margin-top: 20px;'>Moyenne générale de la classe : " . number_format($moyenne_generale_classe, 2) . " / 20</h3>";
     }
 
+    //EXERCICE 5.3 : Lecture "bas niveau" (fgets + explode)
+    $fichier = fopen($chemin_fichier, "r");
+?>
+    <hr style="margin: 40px 0;">
+    <h2>Exercice 5.3 : Lecture bas niveau (fgets & explode)</h2>
+
+    <table border="1" cellpadding="8" cellspacing="0" style=" width: 100%; text-align: center;">
+        <thead>
+            <tr style="background-color: #f6c59b;">
+                <th>Nom</th>
+                <th>Info</th>
+                <th>Math</th>
+                <th>Moyenne</th>
+                <th>Mention</th>
+            </tr>
+        </thead>
+        <tbody>
+        <?php
+        while (!feof($fichier)) {
+            $ligne = fgets($fichier);
+            
+            if ($ligne !== false && trim($ligne) !== "") {
+                $donnees = explode(';', trim($ligne));
+                
+                if (count($donnees) >= 3) {
+                    $nom = htmlspecialchars($donnees[0]);
+                    $note_info = floatval($donnees[1]);
+                    $note_math = floatval($donnees[2]);
+
+                    $moyenne_etudiant = ($note_info + $note_math) / 2;
+
+                    if ($moyenne_etudiant >= 16) {
+                        $mention = "Très Bien";
+                    } elseif ($moyenne_etudiant >= 14) {
+                        $mention = "Bien";
+                    } elseif ($moyenne_etudiant >= 12) {
+                        $mention = "Assez Bien";
+                    } elseif ($moyenne_etudiant >= 10) {
+                        $mention = "Passable";
+                    } else {
+                        $mention = "Insuffisant";
+                    }
+
+                    echo "<tr style='background-color: #9c8580;'>";
+                    echo "<td>" . $nom . "</td>";
+                    echo "<td>" . $note_info . "</td>";
+                    echo "<td>" . $note_math . "</td>";
+                    echo "<td>" . number_format($moyenne_etudiant, 2) . "</td>";
+                    echo "<td>" . $mention . "</td>";
+                    echo "</tr>";
+                }
+            }
+        }
+        fclose($fichier);
+        ?>
+        </tbody>
+    </table>
+ <?php   
 } else {
     echo "<p style='color:red;'>Erreur : Le fichier data/notes.csv n'existe pas.</p>";
 }
