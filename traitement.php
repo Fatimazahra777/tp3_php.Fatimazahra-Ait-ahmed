@@ -48,5 +48,9 @@ Réponses (Exercice 4.3)
   Question b : Que contient $_REQUEST ?
   Réponse : La variable superglobale $_REQUEST est un tableau associatif 
   qui contient par défaut l'ensemble des données des tableaux $_GET, $_POST et $_COOKIE combinés.
+
+  Question (Exercice 5.x - JSON) : Lequel de ces formats est directement exploitable par une application JavaScript ?
+  Réponse : C'est le format *JSON*, car il est nativement compatible et directement 
+  exploitable par JavaScript (contrairement à la sérialisation de PHP).
 */
 ?>
