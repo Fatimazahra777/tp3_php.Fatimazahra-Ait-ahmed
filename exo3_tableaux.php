@@ -1,4 +1,9 @@
 <?php
+include 'includes/entete_inc.php';
+include 'includes/menu_inc.php';
+?>
+
+<?php
 
 // Partie 3 : Tableaux
 // Fichier : exo3_tableaux.php
@@ -201,4 +206,8 @@ echo "var_dump(\$a === \$b) : "; var_dump($a === $b); echo "<br>";
   - $a === $b : Identité. False ici car l'ordre des éléments diffère entre $a et $b.
 */
 
+?>
+
+<?php
+include 'includes/pied_inc.php';
 ?>
