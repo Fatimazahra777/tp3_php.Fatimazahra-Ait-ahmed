@@ -20,6 +20,33 @@ if (
         $note_math >= NOTE_MIN && $note_math <= NOTE_MAX
     ) {
         $moyenne = ($note_info + $note_math) / 2;
+        
+        //EXERCICE 5.1 : ÉCRITURE DANS LE FICHIER CSV
+
+        // 1. Ouvrir le fichier
+        $fichier = fopen("data/notes.csv", "a");
+
+        if ($fichier !== false) {
+        // Préparer les données de l'apprenant sous forme de tableau
+        $ligne = array($nom, $note_info, $note_math);
+
+        // 2. Écrire l'enregistrement avec fputcsv() (séparateur ';')
+        fputcsv($fichier, $ligne, ";");
+
+       // 3. Fermer le fichier avec fclose()
+       fclose($fichier);
+}
+        /*
+        Exercice 5.1:
+        Question : Que se passerait-il avec le mode "w" au lieu de "a" ?
+        Réponse : 
+        Le mode "a" (Append) ouvre le fichier en écriture seule et place le pointeur à la fin du fichier. Il permet d'ajouter de nouveaux enregistrements sans effacer 
+        le contenu existant (conserve l'historique des étudiants).
+      
+        Le mode "w" (Write) écrase complètement le contenu existant du fichier à chaque 
+        ouverture. Par conséquent, seul le dernier étudiant saisi serait conservé et 
+        les saisies précédentes seraient perdues.
+        */
 
         echo "<h3>Récapitulatif des notes</h3>";
         echo "<p><b>Nom :</b> " . $nom . "</p>";
