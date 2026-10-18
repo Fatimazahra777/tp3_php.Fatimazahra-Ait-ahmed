@@ -1,0 +1,38 @@
+[
+    {
+        "nom": "dsdqd",
+        "info": 12,
+        "math": 19,
+        "moyenne": 15.5
+    },
+    {
+        "nom": "fatima",
+        "info": 12,
+        "math": 19,
+        "moyenne": 15.5
+    },
+    {
+        "nom": "fatima",
+        "info": 9,
+        "math": 19,
+        "moyenne": 14
+    },
+    {
+        "nom": "Asmaa",
+        "info": 18,
+        "math": 19,
+        "moyenne": 18.5
+    },
+    {
+        "nom": "Asmaa",
+        "info": 18,
+        "math": 19,
+        "moyenne": 18.5
+    },
+    {
+        "nom": "Asmaa",
+        "info": 18,
+        "math": 17.75,
+        "moyenne": 17.875
+    }
+]
